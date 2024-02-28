@@ -103,7 +103,7 @@ int int_compare(int a, int b)
 }
 
 //function set push_cost
-void    set_push_cost_a(t_list *a, t_list *b)
+void    set_push_cost(t_list *a, t_list *b)
 {
     int a_size;
     int b_size;

@@ -1,12 +1,8 @@
 #include "test.h"
 
-
-#include <stdio.h>
-
-/*int main(int ac, char **av)
+int main(int ac, char **av)
 {
     char    **result;
-
 
     if (ac < 2)
         return (1);
@@ -17,33 +13,22 @@
         ft_print_error();
         return (1);
     }
-    init_sort(av);
-    return (0);
-}*/
-#include <stdio.h>
-void    print_list(t_list *lst)
-{
-    t_list *tmp;
-    tmp = lst;
-    while (tmp)
-    {
-        //printf("index:%d\n",tmp->index);
-        printf("content:%d\n",tmp->content);
-        //printf("push_cost:%d\n",tmp->push_cost);
-        //printf("target_node:%d\n", tmp->target_node->content);
-        printf("\n");
-        tmp = tmp->next;
-    }
+    if (init_sort(av))
+        return (0);
+    else
+        ft_print_error();
+    return (1);
 }
 
-int main(int    ac, char **av)
+
+/*int main(int    ac, char **av)
 {
     t_list *lst;
     t_list *tmp;
     t_list  *lst2;
 
 
-    int test[8] = {1,2,3,4,5,6,7,8};
+    int test[8] = {8,7,6,5,4,3,2,1};
     int test2[3] = {1,5,2};
     lst2 = NULL;
     lst = NULL;
@@ -57,19 +42,9 @@ int main(int    ac, char **av)
         tmp =  ft_lstnew(test2[i]);
         ft_lstadd_back(&lst2,tmp);
     }
-    printf("stack a:\n");
-    //printf("this is simple sort:\n");
-    //lst = ft_simplesort(lst);
-    //print_list(lst);
-    //printf("this is pass function:\n");
-    //ft_pushtob(&lst,&lst2,true);
-    //print_list(lst);
-    //printf("this is new list:\n");
-    //print_list(lst2);
-    printf("%d\n",ft_check_sort(lst2));
-    print_list(lst2);
-    printf("this is after sort:\n");
-    lst2 = ft_simplesort(lst2);
-    print_list(lst2);
+    lst = ft_complexsort(lst);
+    //testing complex sort with lst
+    printf("this is after complex sort:\n");
+    print_list(lst);
     return (0);
-}
+}*/

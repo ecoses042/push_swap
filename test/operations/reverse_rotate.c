@@ -19,30 +19,28 @@ t_list *ft_reverse_rotate(t_list *lst)
     return (lst);
 }
 
-void    print_reverse_rotate(t_list **lst, int stack, int duration)
+void    print_reverse_rotate(t_list **lst, int stack)
 {
     if (ft_lstsize(*lst) < 2)
         return ;
-    while (duration)
-    {
-        *lst = ft_reverse_rotate(*lst);
-        if (stack == 0)
-            write(1,"rra\n",4);
-        if (stack == 1)
-            write(1,"rrb\n",4);
-        duration--;
-    }
+    *lst = ft_reverse_rotate(*lst);
+    if (stack == 0)
+        write(1,"rra\n",4);
+    if (stack == 1)
+        write(1,"rrb\n",4);
 }
 
-void    print_rrr(t_list **a, t_list **b, int duration)
+void    print_rrr(t_list **a, t_list **b)
 {
     if (!a || !b)
         return ;
-    while (duration)
-    {
-        write(1,"rrr\n",4);
-        *a = ft_reverse_rotate(*a);
-        *b = ft_reverse_rotate(*b);
-        duration--;
-    }
+    write(1,"rrr\n",4);
+    *a = ft_reverse_rotate(*a);
+    *b = ft_reverse_rotate(*b);
+}
+
+void    rrr_cheapest(t_list **a, t_list **b, t_list *cheapest_node)
+{
+    while (*b != cheapest_node->target_node && *a != cheapest_node)
+        print_rrr(a,b);
 }

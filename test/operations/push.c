@@ -2,7 +2,7 @@
 
 //push a and b
 //status false if b->a and true if a->b
-void ft_pushtob(t_list **remove, t_list **move_to, bool status) 
+void ft_push(t_list **remove, t_list **move_to, bool status) 
 {
     t_list *tmp;
 

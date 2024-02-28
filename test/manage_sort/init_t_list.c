@@ -11,8 +11,29 @@ void    ft_init_list(t_list *lst)
         tmp->abovemdeian = NULL;
         tmp->push_cost = INT_MAX;
         tmp->index = INT_MAX;
+        tmp->cheapest = false;
         tmp = tmp->next;
     }
+}
+
+void    find_cheapest(t_list *a)
+{
+    int cheapest_value;
+    t_list *cheapest_node;
+
+    if (!a)
+        return ;
+    cheapest_value = INT_MAX;
+    while (a)
+    {
+        if (a->push_cost < cheapest_value)
+        {
+            cheapest_value = a->push_cost;
+            cheapest_node = a;
+        }
+        a = a->next;
+    }
+    cheapest_node->cheapest = true;
 }
 
 void    ft_set_list(t_list  *a, t_list  *b)
@@ -25,6 +46,8 @@ void    ft_set_list(t_list  *a, t_list  *b)
     set_above_median(b);
     set_target_node_a(a,b);
     set_target_node_b(a,b);
-    set_push_cost_a(a,b);
-    set_push_cost_a(b,a);
+    set_push_cost(a,b);
+    set_push_cost(b,a);
+    find_cheapest(a);
+    find_cheapest(b);
 }
