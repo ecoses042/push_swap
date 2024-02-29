@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msong <msong@42seoul.kr>                   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/29 15:29:11 by msong             #+#    #+#             */
+/*   Updated: 2024/02/29 15:30:18 by msong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../test.h"
 
-static int	ft_isspace(char c)
+static	int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\n' || c == '\t' || \
 			c == '\v' || c == '\f' || c == '\r')
@@ -9,7 +21,7 @@ static int	ft_isspace(char c)
 		return (0);
 }
 
-long    ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	long	nbr;
 	long	sign;

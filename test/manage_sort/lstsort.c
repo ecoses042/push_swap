@@ -1,61 +1,65 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lstsort.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: msong <msong@42seoul.kr>                   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/29 15:59:19 by msong             #+#    #+#             */
+/*   Updated: 2024/02/29 16:04:16 by msong            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../test.h"
 
-//test function delete it after completition
-
-void free_list(t_list *head)
+void	free_list(t_list	*head)
 {
-    t_list *tmp;
+	t_list	*tmp;
 
-    while (head)
-    {
-        tmp = head;
-        head = head->next;
-        free(tmp);        
-    }
+	while (head)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
 }
 #include <stdio.h>
-void    print_list(t_list *lst)
-{
-    t_list *tmp;
-    tmp = lst;
-    while (tmp)
-    {
-        //printf("index:%d\n",tmp->index);
-        printf("content:%d\n",tmp->content);
-        //printf("push_cost:%d\n",tmp->push_cost);
-        //printf("target_node:%d\n", tmp->target_node->content);
-        printf("\n");
-        tmp = tmp->next;
-    }
-} 
-//function that sends list to simple or complex sort depending on their size
-bool    init_sort(char    **content)
-{
-    size_t  i;
-    t_list  *a;
-    bool    flag;
+void print_list_content(t_list *head) {
+    t_list *current = head;
 
-    flag = false;
-    a = NULL;
-    i = 1;
-    while (content[i])
-    {
-        ft_lstadd_back(&a,ft_lstnew(ft_atoi(content[i])));
-        i++;
+    // Iterate over each node
+    while (current != NULL) {
+        // Print content of current node
+        printf("%d ", current->content);
+
+        // Move to next node
+        current = current->next;
     }
-    if (!a)
-        return flag;
-    printf("this is list before sorting:\n");
-    print_list(a);
-    if (ft_lstsize(a) <= 3)
-        a = ft_simplesort(a);
-    else
-        a = ft_complexsort(a);
-    flag = ft_check_sort(a);
-    printf("this is list sorted:\n");
-    print_list(a);
-    free_list(a);
-    return flag;
+    printf("\n"); // Print newline at the end
 }
+bool	init_sort(char **content)
+{
+	size_t	i;
+	t_list	*a;
+	bool	flag;
 
-
+	flag = false;
+	a = NULL;
+	i = 1;
+	while (content[i])
+	{
+		printf("%s\n",content[i]);
+		ft_lstadd_back(&a, ft_lstnew(ft_atoi(content[i])));
+		i++;
+	}
+	if (!a)
+		return (flag);
+	if (ft_lstsize(a) <= 3)
+		a = ft_simplesort(a);
+	else
+		a = ft_complexsort(a);
+	flag = ft_check_sort(a);
+	print_list_content(a);
+	free_list(a);
+	return (flag);
+}
