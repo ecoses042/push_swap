@@ -1,18 +1,28 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_print_error.c                                   :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: msong <msong@42seoul.kr>                   +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 15:13:15 by msong             #+#    #+#             */
-/*   Updated: 2024/02/29 15:15:56 by msong            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
 
 #include "../test.h"
 
-void	ft_print_error(void)
+void    ft_free(char **str)
 {
-	write(2, "Error\n", 6);
+    int i;
+
+    i = 0;
+    while (str[i])
+    {
+        free(str[i]);
+        i++;
+    }
+    free(str);
+}
+
+void ft_print_error(char **str, int mode)
+{
+    if (mode == 1)
+    {
+        ft_free(str);
+        write(2,"Error\n",6);
+    }
+    else if (mode == 0)
+    {
+        ft_free(str);
+    }
 }
