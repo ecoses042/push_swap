@@ -2,14 +2,13 @@
 
 t_list *get_cheapest(t_list *a)
 {
-    if (!a)
-        return a;
     while (a)
     {
         if (a->cheapest)
             return (a);
         a = a->next;
     }
+    return (a);
 }
 
 void    ft_apushb(t_list **a,t_list **b)

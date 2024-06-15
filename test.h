@@ -24,7 +24,8 @@ bool ft_check_error(char **str);
 void ft_print_error(char **str, int mode);
 
 //manage_input
-long    long ft_atoi(const char *str);
+long    ft_atoi(const char *str);
+bool ft_atol(const char *str);
 int ft_merge(char ***result, char **av);
 int ft_strcmp(const char *s1, const char *s2);
 char    *ft_strdup(const char *src);

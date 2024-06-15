@@ -13,7 +13,6 @@ void free_list(t_list *head)
         free(tmp);        
     }
 }
-
 //function that sends list to simple or complex sort depending on their size
 bool    init_sort(char    **content)
 {

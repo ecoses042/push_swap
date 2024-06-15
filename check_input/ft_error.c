@@ -1,5 +1,4 @@
 #include "../test.h"
-
 //function that checkes for duplicates. return 0 if duplicates exits
 bool ft_check_dup(char **str)
 {
@@ -19,6 +18,7 @@ bool ft_check_dup(char **str)
         }
         i++;
     }
+    
     return true;
 }
 
@@ -26,18 +26,16 @@ bool ft_check_dup(char **str)
 bool ft_check_flow(char *str)  //atoi 변형해서 사용, 변형했을 때 숫자 넘어가거나 변형이 안되면 0 리턴
 {
     int i;
-    long    long intcheck;
 
-    intcheck = 0;
     i = 0;
+    
     while (str[i])
     {
         if ((str[i] < '0'|| str[i] > '9') && str[i] != '-')
             return false;
         i++;
     }
-    intcheck = ft_atoi(str);
-    if (intcheck <  INT_MIN || intcheck > INT_MAX)
+    if (!ft_atol(str))
         return false;
     return true;
 }
