@@ -22,6 +22,7 @@ t_list *lst_max(t_list *lst)
 {
     t_list  *max;
     t_list  *tmp;
+    
     if (!lst)
         return NULL;
     max =  lst;

@@ -22,9 +22,9 @@ void    print_rotate(t_list **lst, int stack)
     if (ft_lstsize(*lst) == 1 || !ft_lstsize(*lst))
         return ;
     *lst = ft_rotate(*lst);
-    if (stack == 0)
+    if (!stack)
         write(1,"ra\n",3);
-    if (stack == 1)
+    if (stack)
         write(1,"rb\n",3);
 }
 
@@ -34,6 +34,7 @@ void    print_rr(t_list **a, t_list **b)
         return ;
     *a = ft_rotate(*a);
     *b = ft_rotate(*b);
+    write(1, "rr\n", 3);
 }
 
 void    rr_cheapest(t_list **a, t_list **b, t_list *cheapest_node)

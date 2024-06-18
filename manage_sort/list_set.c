@@ -14,21 +14,24 @@ void    set_index(t_list *lst)
         i++;
         tmp = tmp->next;
     }
+    set_above_median(lst);
 }
 
 //function sets abovemedian
 void set_above_median(t_list *lst)
 {
-    int len;
+    size_t len;
     t_list *tmp;    
+    int median;
 
     if (!lst)
         return ;
     len = ft_lstsize(lst);
+    median = len / 2;
     tmp = lst;
     while (tmp)
     {
-        if (len / 2 >= tmp->index)
+        if (median >= tmp->index)
             tmp->abovemdeian = true;
         else
             tmp->abovemdeian = false;
@@ -84,7 +87,6 @@ void    set_target_node_b(t_list *a, t_list *b)
             }
             tmp = tmp->next;
         }
-    
     if (flag == LONG_MAX)
         b->target_node = lst_min(a);
     else

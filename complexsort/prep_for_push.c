@@ -8,7 +8,7 @@ void    prep_for_push(t_list **lst, t_list *cheapest_node, bool stack)
     {
         if ((*lst)->abovemdeian)
             print_rotate(lst, stack);
-        else if ((*lst)->abovemdeian)
+        else 
             print_reverse_rotate(lst,stack);
     }
 }

@@ -2,11 +2,16 @@
 
 void    rotate_min_to_top(t_list **a)
 {
-    while ((*a)->content != lst_min(*a)->content)
+    t_list *min;
+
+    min = lst_min(*a);
+    if (!min)
+        return ;
+    while ((*a)->content != min->content)
     {
-        if(lst_min(*a)->abovemdeian)
+        if(min->abovemdeian)
             print_rotate(a,0);
-        else if (!(lst_min(*a)->abovemdeian))
+        else if (!min->abovemdeian)
             print_reverse_rotate(a,0);
     }
 }

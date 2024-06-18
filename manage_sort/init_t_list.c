@@ -30,6 +30,8 @@ void    find_cheapest(t_list *a)
         {
             cheapest_value = a->push_cost;
             cheapest_node = a;
+            if (cheapest_node == 0)
+                break;
         }
         a = a->next;
     }
