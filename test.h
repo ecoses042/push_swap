@@ -39,11 +39,12 @@ void	ft_lstadd_front(t_list **lst, t_list *new);
 //manage sort fuctions
 t_list  *find_min_cost(t_list *lst);
 void    set_index(t_list *lst);
-void set_above_median(t_list *lst);
+void    set_above_median(t_list *lst);
 void    set_target_node_a(t_list *a, t_list *b);
 void    set_target_node_b(t_list *a, t_list *b);
 void    set_push_cost(t_list *a, t_list *b);
-void    ft_set_list(t_list  *a, t_list  *b);
+void    ft_set_list_a(t_list  *a, t_list  *b);
+void    ft_set_list_b(t_list *a, t_list *b);
 bool    init_sort(char    **content);
 
 //operation

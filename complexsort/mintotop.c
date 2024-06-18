@@ -7,7 +7,7 @@ void    rotate_min_to_top(t_list **a)
     min = lst_min(*a);
     if (!min)
         return ;
-    while ((*a)->content != min->content)
+    while (*a != min)
     {
         if(min->abovemdeian)
             print_rotate(a,0);

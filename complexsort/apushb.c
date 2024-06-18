@@ -21,7 +21,7 @@ void    ft_apushb(t_list **a,t_list **b)
         rrr_cheapest(a,b,cheapest);
     prep_for_push(a,cheapest,false);
     prep_for_push(b,cheapest->target_node,true);
-    ft_push(a,b,false);
+    ft_push(a,b,true);
 }
 
 void    ft_bpusha(t_list **a, t_list **b)
