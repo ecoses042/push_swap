@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 //last to first change 그러면 바뀐 첫번째 원소를 리턴해줘야 되겠네
 t_list *ft_reverse_rotate(t_list *lst)

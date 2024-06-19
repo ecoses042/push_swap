@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 int ft_count(char **str)
 {

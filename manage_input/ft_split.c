@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 static int	issep(char a, char b)
 {

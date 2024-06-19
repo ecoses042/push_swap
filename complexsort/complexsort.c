@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 /**#include <stdio.h>
 
 void print_list(t_list *temp)

@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 //function that returns the size of the string
 size_t ft_strlen(const char *a) {

@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 void    ft_init_list(t_list *lst)
 {

@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 //test function delete it after completition
 

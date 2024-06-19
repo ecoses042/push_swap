@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../test.h"
+#include "../push_swap.h"
 
 static	int	ft_isspace(char c)
 {

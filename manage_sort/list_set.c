@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 //function that sets index
 void    set_index(t_list *lst)

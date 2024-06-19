@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 bool ft_check_sort(t_list *lst)
 {

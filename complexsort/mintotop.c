@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 void    rotate_min_to_top(t_list **a)
 {

@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 t_list  *find_min_cost(t_list *lst)
 {

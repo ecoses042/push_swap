@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 //first noed to last index
 

@@ -1,4 +1,4 @@
-#include "../test.h"
+#include "../push_swap.h"
 
 //push a and b
 //status false if b->a and true if a->b
